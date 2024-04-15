@@ -8,11 +8,12 @@ on:
     branches: [ "dynamic" ]
 
   workflow_dispatch:
-env: 
-   TOKEN: ${{ secrets.TOKEN_ID }}
 jobs:
   BuildKernel:
     runs-on: ubuntu-20.04
+    environment: TOKEN
+    env:
+      TOKEN: ${{ secrets.TOKEN_ID }}     
     steps:
       - uses: actions/checkout@v3        
       - name: build kernel
