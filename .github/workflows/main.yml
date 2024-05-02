@@ -13,9 +13,9 @@ jobs:
     runs-on: ubuntu-20.04
     environment: TOKEN
     env:
-      TOKEN: ${{ secrets.TOKEN_ID }}     
+      TOKEN: ${{ secrets.TOKEN_ID }}
     steps:
-      - uses: actions/checkout@v3        
+      - uses: actions/checkout@v3
       - name: build kernel
         run: |
           git clone https://github.com/tiann/KernelSU
