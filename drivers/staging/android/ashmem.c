@@ -219,7 +219,6 @@ static int ashmem_file_setup(struct ashmem_area *asma, size_t size,
 		 * asma permission checks. Have to override get_unmapped_area
 		 * as well to prevent VM_BUG_ON check for f_ops modification.
 		 */
->>>>>>> 7a22fc46cc7a72d72b6dfdcbbc46e18c9f2caab0
 		if (!vmfile_fops.mmap) {
 			vmfile_fops = *vmfile->f_op;
 			vmfile_fops.get_unmapped_area =
