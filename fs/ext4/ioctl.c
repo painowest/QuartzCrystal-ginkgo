@@ -520,7 +520,7 @@ static int ext4_shutdown(struct super_block *sb, unsigned long arg)
 {
 	struct ext4_sb_info *sbi = EXT4_SB(sb);
 	__u32 flags;
-	int ret;
+	struct ret;
 
 	if (!capable(CAP_SYS_ADMIN))
 		return -EPERM;
