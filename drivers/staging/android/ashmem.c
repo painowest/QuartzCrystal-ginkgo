@@ -162,6 +162,7 @@ static int ashmem_file_setup(struct ashmem_area *asma, size_t size,
 	static struct file_operations vmfile_fops;
 	static DEFINE_SPINLOCK(vmfile_fops_lock);
 	struct file *vmfile;
+        int ret = 0;
 
 	vmfile = shmem_file_setup(ASHMEM_NAME_DEF, size, vma->vm_flags);
 	if (IS_ERR(vmfile))
