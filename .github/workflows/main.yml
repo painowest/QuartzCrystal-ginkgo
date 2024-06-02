@@ -3,9 +3,9 @@ name: CI
 on:
 
   push:
-    branches: [ "origin/main" ]
+    branches: [ "dynamic" ]
   pull_request:
-    branches: [ "origin/main" ]
+    branches: [ "dynamic" ]
 
   workflow_dispatch:
 jobs:
@@ -15,7 +15,7 @@ jobs:
     env:
       TOKEN: ${{ secrets.TOKEN_ID }}
     steps:
-      - uses: actions/checkout@v3        
+      - uses: actions/checkout@v3
       - name: build kernel
         run: |
           git clone https://github.com/tiann/KernelSU
