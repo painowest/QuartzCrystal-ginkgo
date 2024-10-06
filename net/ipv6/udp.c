@@ -1386,7 +1386,7 @@ do_udp_sendmsg:
 
 	if (cgroup_bpf_enabled && !connected) {
 		err = BPF_CGROUP_RUN_PROG_UDP6_SENDMSG_LOCK(sk,
-					   (struct sockaddr *)sin6, &fl6.saddr);
+					   (struct sockaddr *)sin6, &fl6->saddr);
 		if (err)
 			goto out_no_dst;
 		if (sin6) {
@@ -1402,8 +1402,8 @@ do_udp_sendmsg:
 				err = -EINVAL;
 				goto out_no_dst;
 			}
-			fl6.fl6_dport = sin6->sin6_port;
-			fl6.daddr = sin6->sin6_addr;
+			fl6->fl6_dport = sin6->sin6_port;
+			fl6->daddr = sin6->sin6_addr;
 		}
 	}
 
