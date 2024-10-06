@@ -1407,7 +1407,7 @@ do_udp_sendmsg:
 		}
 	}
 
-	final_p = fl6_update_dst(&fl6, opt, &final);
+	final_p = fl6_update_dst(fl6, opt, &final);
 
 	if (final_p)
 		connected = 0;
